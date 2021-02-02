@@ -1,0 +1,10 @@
+server:
+  port: 8080
+spring:
+  data:
+    mongodb:
+      uri: mongodb://admin:123456@34.76.177.111:27017/myflex?authSource=admin
+#      username: admin
+#      password: 123456
+#      host: 34.76.177.111
+#      port: 27017
