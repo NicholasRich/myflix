@@ -2,7 +2,7 @@ FROM openjdk:8-jre-slim
 
 MAINTAINER BoyangWang/845657927@qq.com
 
-VOLUME ["/tmp"]
+#VOLUME ["/tmp"]
 
 EXPOSE 8080
 
