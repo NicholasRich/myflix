@@ -6,6 +6,6 @@ VOLUME ["/tmp"]
 
 EXPOSE 8080
 
-COPY myflix.jar myflix.jar
+COPY ./target/myflex-0.0.1-SNAPSHOT.jar myflix.jar
 
 ENTRYPOINT ["java", "-jar", "myflix.jar"]
