@@ -4,10 +4,8 @@ MAINTAINER BoyangWang/845657927@qq.com
 
 #VOLUME ["/tmp"]
 
+COPY ./target/myflix-0.0.1-SNAPSHOT.jar myflix.jar
+
 EXPOSE 8080
-
-WORKDIR /var/jenkins_home/workspace
-
-COPY /myflix/target/myflix-0.0.1-SNAPSHOT.jar myflix.jar
 
 ENTRYPOINT ["java", "-jar", "myflix.jar"]
