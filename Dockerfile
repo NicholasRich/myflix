@@ -6,6 +6,6 @@ MAINTAINER BoyangWang/845657927@qq.com
 
 EXPOSE 8080
 
-COPY /var/jenkins_home/workspace/myflix/target/myflix-0.0.1-SNAPSHOT.jar myflix.jar
+ADD /var/jenkins_home/workspace/myflix/target/myflix-0.0.1-SNAPSHOT.jar myflix.jar
 
 ENTRYPOINT ["java", "-jar", "myflix.jar"]
