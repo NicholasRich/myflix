@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class VideoController {
     @GetMapping
     public String test(){
-        return "Hello world";
+        return "Hello world~~~";
     }
 //    @Autowired
 //    private MongoTemplate mongoTemplate;
