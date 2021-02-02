@@ -6,6 +6,6 @@ VOLUME ["/tmp"]
 
 EXPOSE 8080
 
-COPY ./target/myflex-0.0.1-SNAPSHOT.jar myflix.jar
+COPY /var/jenkins_home/workspace/myflix/target/myflix-0.0.1-SNAPSHOT.jar myflix.jar
 
 ENTRYPOINT ["java", "-jar", "myflix.jar"]
