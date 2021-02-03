@@ -1,6 +1,6 @@
 package com.boyang.myflix.bean;
 
-import org.springframework.format.annotation.DateTimeFormat;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.util.Date;
 import java.util.List;
@@ -12,7 +12,7 @@ public class Video {
     private String thumbnailId;
     private String userName;
     private List<String> categories;
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private Date uploadTime;
 
     public String getId() {
