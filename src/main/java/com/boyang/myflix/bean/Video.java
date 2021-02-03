@@ -1,17 +1,14 @@
 package com.boyang.myflix.bean;
 
-import org.bson.types.Binary;
-import org.springframework.data.annotation.Id;
-
 import java.util.List;
 
 public class Video {
-    @Id
     private String id;
     private String name;
     private String fileName;
-    private Binary thumb;
-    private List<String> category;
+    private String thumbnailId;
+    private String userId;
+    private List<String> categoryIds;
 
     public String getId() {
         return id;
@@ -37,19 +34,27 @@ public class Video {
         this.fileName = fileName;
     }
 
-    public Binary getThumb() {
-        return thumb;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setThumb(Binary thumb) {
-        this.thumb = thumb;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
-    public List<String> getCategory() {
-        return category;
+    public String getThumbnailId() {
+        return thumbnailId;
     }
 
-    public void setCategory(List<String> category) {
-        this.category = category;
+    public void setThumbnailId(String thumbnailId) {
+        this.thumbnailId = thumbnailId;
+    }
+
+    public List<String> getCategoryIds() {
+        return categoryIds;
+    }
+
+    public void setCategoryIds(List<String> categoryIds) {
+        this.categoryIds = categoryIds;
     }
 }
