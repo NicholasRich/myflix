@@ -72,7 +72,7 @@ public class VideoServiceImpl implements VideoService {
 
             //绘制图像  getScaledInstance表示创建此图像的缩放版本，返回一个新的缩放版本Image,按指定的width,height呈现图像
             //Image.SCALE_SMOOTH,选择图像平滑度比缩放速度具有更高优先级的图像缩放算法。
-            tag.getGraphics().drawImage(bi.getScaledInstance(240, 150, Image.SCALE_DEFAULT), 0, 0, null);
+            tag.getGraphics().drawImage(bi.getScaledInstance(240, 150, Image.SCALE_FAST), 0, 0, null);
 
             //创建文件输出流
             FileOutputStream out = new FileOutputStream("C:/test.jpg");
