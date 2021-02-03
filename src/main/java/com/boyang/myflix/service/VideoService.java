@@ -12,5 +12,7 @@ public interface VideoService {
 
     List<Video> findAll();
 
+    List<Video> findByCategory(String category);
+
     byte[] play(String videoName) throws SftpException;
 }

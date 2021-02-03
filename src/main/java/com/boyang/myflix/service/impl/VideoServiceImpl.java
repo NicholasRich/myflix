@@ -40,6 +40,12 @@ public class VideoServiceImpl implements VideoService {
     }
 
     @Override
+    public List<Video> findByCategory(String category) {
+//        mongoTemplate.find(Query.query(Criteria.where("categories").(Criteria.)))
+        return videoRepository.findAllByCategories(category);
+    }
+
+    @Override
     public byte[] play(String videoName) throws SftpException {
         return null;
     }

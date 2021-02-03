@@ -9,7 +9,6 @@ import com.jcraft.jsch.SftpException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletResponse;
 import java.io.InputStream;
 import java.util.List;
 
@@ -19,12 +18,10 @@ import java.util.List;
 public class VideoController {
     @Autowired
     private VideoService videoService;
-    @Autowired
-    private HttpServletResponse response;
 
-    @GetMapping("/all")
-    public List<Video> findAll() {
-        return videoService.findAll();
+    @GetMapping("/{category}}")
+    public List<Video> findAll(@PathVariable("category") String category) {
+        return videoService.findByCategory(category);
     }
 
     @PostMapping("/play/{videoName}")
