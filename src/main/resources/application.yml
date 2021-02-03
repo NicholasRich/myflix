@@ -4,6 +4,10 @@ spring:
   data:
     mongodb:
       uri: mongodb://admin:123456@35.187.40.59:27017/myflix?authSource=admin
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
 #      username: admin
 #      password: 123456
 #      host: 34.76.177.111

@@ -8,9 +8,12 @@ import com.boyang.myflix.service.VideoService;
 import com.jcraft.jsch.SftpException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @CrossOrigin
@@ -36,5 +39,13 @@ public class VideoController {
         byte[] bytes = IoUtil.readBytes(inputStream);
         sftp.close();
         return bytes;
+    }
+
+    @PostMapping()
+    public Map<String, Object> upload(@RequestParam MultipartFile file, @RequestParam Map<String, Object> map) throws IOException {
+        Sftp sftp = JschUtil.createSftp("35.187.40.59", 22, "root", "Wby102938");
+        sftp.upload("/home/wby8456/video/", file.getResource().getFile());
+//        System.out.println(name);
+        return null;
     }
 }
