@@ -37,7 +37,8 @@ class MyflexApplicationTests {
         video.setUserName("admin");
         video.setName("testVideo1");
         video.setFileName("hyperwangg.mp4");
-        System.out.println(videoService.addVideo(video));
+//        System.out.println(videoService.addVideo(video));
+        System.out.println(videoService.findAll().get(0).getName());
     }
 
     @Test

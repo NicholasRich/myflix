@@ -35,6 +35,6 @@ public class VideoServiceImpl implements VideoService {
 
     @Override
     public List<Video> findAll() {
-        return videoRepository.findAll(Sort.by(Sort.Direction.DESC,"updateTime"));
+        return videoRepository.findAll(Sort.by(Sort.Direction.DESC,"uploadTime"));
     }
 }
