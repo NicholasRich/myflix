@@ -1,10 +1,12 @@
 package com.boyang.myflex;
 
+import cn.hutool.core.collection.CollUtil;
 import cn.hutool.extra.ssh.JschUtil;
 import cn.hutool.extra.ssh.Sftp;
 import com.boyang.myflix.MyflexApplication;
 import com.boyang.myflix.bean.Category;
 import com.boyang.myflix.bean.User;
+import com.boyang.myflix.bean.Video;
 import com.boyang.myflix.service.CategoryService;
 import com.boyang.myflix.service.UserService;
 import com.boyang.myflix.service.VideoService;
@@ -12,6 +14,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.mongodb.gridfs.GridFsTemplate;
+
+import java.util.Date;
 
 @SpringBootTest(classes = MyflexApplication.class)
 class MyflexApplicationTests {
@@ -26,10 +30,14 @@ class MyflexApplicationTests {
 
     @Test
     void contextLoads() {
-//        String s = gridFsTemplate.store(FileUtil.getInputStream("C:\\Users\\84565\\Desktop\\test.png"), "test.png").toString();
-//        System.out.println(s);
-//        videoService.addVideo(new Video());
-        System.out.println(videoService.findAll().get(0).getId());
+        Video video = new Video();
+        video.setCategories(CollUtil.toList("cartoon", "shorts"));
+        video.setThumbnailId("as");
+        video.setUploadTime(new Date());
+        video.setUserName("admin");
+        video.setName("testVideo1");
+        video.setFileName("hyperwangg.mp4");
+        System.out.println(videoService.addVideo(video));
     }
 
     @Test
@@ -47,7 +55,7 @@ class MyflexApplicationTests {
     }
 
     @Test
-    void category(){
+    void category() {
         Category category = new Category();
         category.setName("cartoon");
         System.out.println(categoryService.addCategory(category));

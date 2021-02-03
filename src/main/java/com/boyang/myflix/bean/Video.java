@@ -1,5 +1,6 @@
 package com.boyang.myflix.bean;
 
+import java.util.Date;
 import java.util.List;
 
 public class Video {
@@ -7,8 +8,9 @@ public class Video {
     private String name;
     private String fileName;
     private String thumbnailId;
-    private String userId;
-    private List<String> categoryIds;
+    private String userName;
+    private List<String> categories;
+    private Date uploadTime;
 
     public String getId() {
         return id;
@@ -34,12 +36,12 @@ public class Video {
         this.fileName = fileName;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getThumbnailId() {
@@ -50,11 +52,19 @@ public class Video {
         this.thumbnailId = thumbnailId;
     }
 
-    public List<String> getCategoryIds() {
-        return categoryIds;
+    public List<String> getCategories() {
+        return categories;
     }
 
-    public void setCategoryIds(List<String> categoryIds) {
-        this.categoryIds = categoryIds;
+    public void setCategories(List<String> categories) {
+        this.categories = categories;
+    }
+
+    public Date getUploadTime() {
+        return uploadTime;
+    }
+
+    public void setUploadTime(Date uploadTime) {
+        this.uploadTime = uploadTime;
     }
 }

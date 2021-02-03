@@ -4,6 +4,7 @@ import com.boyang.myflix.bean.Video;
 import com.boyang.myflix.repository.VideoRepository;
 import com.boyang.myflix.service.VideoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.gridfs.GridFsTemplate;
 import org.springframework.stereotype.Service;
@@ -21,11 +22,7 @@ public class VideoServiceImpl implements VideoService {
 
     @Override
     public String addVideo(Video video) {
-//        video.setId(IdUtil.fastSimpleUUID());
-        video.setFileName("test.png");
-        video.setThumbnailId("");
-        videoRepository.save(video);
-        return null;
+        return videoRepository.save(video).getId();
     }
 
     @Override
@@ -38,6 +35,6 @@ public class VideoServiceImpl implements VideoService {
 
     @Override
     public List<Video> findAll() {
-        return videoRepository.findAll();
+        return videoRepository.findAll(Sort.by(Sort.Direction.DESC,"updateTime"));
     }
 }
