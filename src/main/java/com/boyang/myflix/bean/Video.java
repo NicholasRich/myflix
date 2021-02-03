@@ -9,11 +9,11 @@ public class Video {
     private String id;
     private String name;
     private String fileName;
-    private String thumbnailId;
+    private String thumbnailName;
     private String userName;
     private List<String> categories;
     @JsonFormat(pattern = "dd/MM/yyyy")
-    private Date uploadTime;
+    private Date updateTime;
 
     public String getId() {
         return id;
@@ -47,12 +47,12 @@ public class Video {
         this.userName = userName;
     }
 
-    public String getThumbnailId() {
-        return thumbnailId;
+    public String getThumbnailName() {
+        return thumbnailName;
     }
 
-    public void setThumbnailId(String thumbnailId) {
-        this.thumbnailId = thumbnailId;
+    public void setThumbnailName(String thumbnailName) {
+        this.thumbnailName = thumbnailName;
     }
 
     public List<String> getCategories() {
@@ -63,11 +63,11 @@ public class Video {
         this.categories = categories;
     }
 
-    public Date getUploadTime() {
-        return uploadTime;
+    public Date getUpdateTime() {
+        return updateTime;
     }
 
-    public void setUploadTime(Date uploadTime) {
-        this.uploadTime = uploadTime;
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 }

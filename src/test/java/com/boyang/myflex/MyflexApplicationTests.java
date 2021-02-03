@@ -32,8 +32,8 @@ class MyflexApplicationTests {
     void contextLoads() {
         Video video = new Video();
         video.setCategories(CollUtil.toList("cartoon", "shorts"));
-        video.setThumbnailId("as");
-        video.setUploadTime(new Date());
+        video.setThumbnailName("test.png");
+        video.setUpdateTime(new Date());
         video.setUserName("admin");
         video.setName("testVideo1");
         video.setFileName("hyperwangg.mp4");
