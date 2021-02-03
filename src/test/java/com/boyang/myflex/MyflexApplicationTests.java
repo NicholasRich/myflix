@@ -12,6 +12,9 @@ import com.boyang.myflix.service.CategoryService;
 import com.boyang.myflix.service.UserService;
 import com.boyang.myflix.service.VideoService;
 import com.jcraft.jsch.SftpException;
+import org.bytedeco.javacv.FFmpegFrameGrabber;
+import org.bytedeco.javacv.Frame;
+import org.bytedeco.javacv.FrameGrabber;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -65,6 +68,30 @@ class MyflexApplicationTests {
         Category category = new Category();
         category.setName("cartoon");
         System.out.println(categoryService.addCategory(category));
+    }
+
+
+    @Test
+    void test3() throws FrameGrabber.Exception {
+        FFmpegFrameGrabber ff = FFmpegFrameGrabber.createDefault("C:/test.mp4");
+
+        ff.start();
+        int ffLength = ff.getLengthInFrames();
+        Frame f = null;
+        int i = 0;
+        while (i < ffLength) {
+            f = ff.grabImage();
+            //截取第0帧
+            if (i == 3) {
+                //执行截图并放入指定位置
+                videoService.doExecuteFrame(f);
+                break;
+            }
+            i++;
+        }
+        ff.stop();
+
+
     }
 
 }

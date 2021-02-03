@@ -32,7 +32,7 @@ public class VideoController {
     @PostMapping("/play/{videoName}")
     public byte[] play(@PathVariable("videoName") String videoName) throws SftpException {
         Sftp sftp = JschUtil.createSftp("35.187.40.59", 22, "root", "Wby102938");
-        InputStream inputStream = sftp.getClient().get("/home/wby8456/nginx/html/video/" + videoName);
+        InputStream inputStream = sftp.getClient().get("/home/wby8456/video/" + videoName);
         byte[] bytes = IoUtil.readBytes(inputStream);
         sftp.close();
         return bytes;
