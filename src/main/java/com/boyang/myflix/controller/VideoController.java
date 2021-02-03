@@ -19,9 +19,14 @@ public class VideoController {
     @Autowired
     private VideoService videoService;
 
-    @GetMapping("/{category}}")
-    public List<Video> findAll(@PathVariable("category") String category) {
+    @GetMapping("/{category}")
+    public List<Video> findByCategory(@PathVariable("category") String category) {
         return videoService.findByCategory(category);
+    }
+
+    @GetMapping("/all")
+    public List<Video> findAll() {
+        return videoService.findAll();
     }
 
     @PostMapping("/play/{videoName}")
